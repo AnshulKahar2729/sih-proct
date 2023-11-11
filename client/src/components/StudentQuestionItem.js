@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-const StudentQuestionItem = ({ index, questionSets }) => {
+const StudentQuestionItem = ({ questionSets }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  
 
   const submitHandler = () => {
     if (currentQuestion === questionSets.length - 1) {
@@ -16,14 +15,14 @@ const StudentQuestionItem = ({ index, questionSets }) => {
     setCurrentQuestion((prev) => prev + 1);
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     const optionElements = document.querySelectorAll(".option");
 
     // Set the class of the other option elements to "bg-white"
     optionElements.forEach((optionElement) => {
       optionElement.className = "option bg-white";
     });
-  },[currentQuestion])
+  }, [currentQuestion]);
 
   const optionClickHandler = (event) => {
     event.target.className = "option bg-blue-400";

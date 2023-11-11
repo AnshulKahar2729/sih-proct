@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CountdownTimer = ({ examDuration }) => {
-  const [timeRemaining, setTimeRemaining] = useState(60);
+  const [timeRemaining, setTimeRemaining] = useState(examDuration);
   const navigate = useNavigate();
 
   useEffect(() => {
