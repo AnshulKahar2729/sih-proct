@@ -28,19 +28,19 @@ app.get("/api/test", (req, res) => {
 
 const authenticateJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  if(authHeader){
+  if (authHeader) {
     const token = authHeader.split(" ")[1];
     jwt.verify(token, SECRET, (err, user) => {
-      if(err){
+      if (err) {
         return res.status(403).json({ message: "Invalid token" });
       }
       req.user = user;
       next();
-    })
+    });
   } else {
     res.status(401).json({ message: "Unauthorized" });
   }
-}
+};
 
 app.post("/api/register", async (req, res) => {
   const { username, email, password, role } = req.body;
@@ -68,24 +68,23 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
-app.get("/api/login", async(req, res) => {
-  const {email, password, role} = req.body;
-  try{
+app.get("/api/login", async (req, res) => {
+  const { email, password, role } = req.body;
+  try {
     const userDoc = await User.findOne({ email, password, role });
-    if(userDoc){
+    if (userDoc) {
       const token = jwt.sign({ userId: userDoc._id, email, role }, SECRET);
       res.status(200).json({ userId: userDoc._id, token });
     } else {
       res.status(400).json({ message: "Invalid credentials" });
     }
-
-  } catch(err){
+  } catch (err) {
     console.log(err);
     res.status(400).json({ message: err.message });
   }
-})
+});
 
-app.get("/api/exams",authenticateJWT,  async (req, res) => {
+app.get("/api/exams", authenticateJWT, async (req, res) => {
   try {
     const exams = await Exam.find({});
     res.status(200).json(exams);
@@ -95,7 +94,7 @@ app.get("/api/exams",authenticateJWT,  async (req, res) => {
   }
 });
 
-app.get("/api/exam/:id"/* , authenticateJWT */, async (req, res) => {
+app.get("/api/exam/:id" /* , authenticateJWT */, async (req, res) => {
   const { id } = req.params;
   try {
     const exam = await Exam.findById(id);
