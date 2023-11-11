@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# How to setup Proctor Exam Tool
+git clone https://github.com/AnshulKahar2729/sih-proct
+
+## For backend
+npm run dev
+
+## For frontend
+--> cd client
+--> npm start 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
