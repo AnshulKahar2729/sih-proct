@@ -5,7 +5,7 @@ import ResultPage from './components/ResultPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-screen">
       <Routes>
         <Route path='/exam/:examId' element={<StudentExamPage/>}/>
         <Route path='/result' element={<ResultPage/>}/>
