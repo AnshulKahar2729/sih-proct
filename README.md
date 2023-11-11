@@ -2,11 +2,17 @@
 git clone https://github.com/AnshulKahar2729/sih-proct
 
 ## For backend
-```npm run dev```
+```
+cd sih-proct
+npm install
+npm run dev
+
+```
 
 ## For frontend
 ```
-cd client
+cd sih-proct/client
+npm install
 npm start
 ``` 
 
