@@ -14,7 +14,7 @@ const ProctorQuestionItem = ({ dataPass, index }) => {
 
   return (
     <form
-      className="flex flex-col gap-7 mb-8"
+      className="flex flex-col gap-7 mb-8 shadow-md shadow-black/50"
       style={{
         borderRadius: " 1rem",
         backgroundColor: "white",

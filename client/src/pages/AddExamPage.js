@@ -47,15 +47,20 @@ const AddExam = () => {
 
 
   return (
-    <div className="w-full " style={{ padding: "2% 12.5%",backgroundColor:"#D8DFF6" }}>
-      <h1 className="text-4xl font-serif mb-7">Proctor Dashboard</h1>
+    <div className="w-full" style={{ padding: "2% 12.5%",backgroundColor:"#D9DADB" }}>
 
       <div
-        className="flex px-7 justify-between  text-lg  text-white"
+        className="flex flex-col p-7 rounded-full text-lg   w-full " 
+        style={{
+          borderRadius: " 1rem",
+          backgroundColor: "white",
+          padding: "1.5rem",
+        }}
       >
-        <div className=" flex-wrap w-fit">
+        <h1 className="text-4xl  font-serif mb-7 text-black">Add an Exam for Student</h1>
+        <div className="grid grid-cols-4 gap-5 items-center">
           <div
-            className="flex gap-2 p-3 rounded-md mb-5 "
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
               boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
@@ -63,7 +68,7 @@ const AddExam = () => {
           >
             <label>Name:</label>
             <input
-              className="bg-slate-200  text-center text-black w-full placeholder:text-black"
+              className="bg-slate-200 text-sm text-left px-2 text-black w-full placeholder:text-gray-700"
               style={{
                 backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
@@ -72,12 +77,12 @@ const AddExam = () => {
               type="text"
               name="examName"
               value={examName}
-              placeholder="Exam Name"
+              placeholder="Enter your exam name... "
             />
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
               boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
@@ -98,7 +103,7 @@ const AddExam = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
               boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
@@ -106,7 +111,7 @@ const AddExam = () => {
           >
             <label>Duration:</label>
             <input
-              className="bg-slate-200  text-center text-black w-full"
+              className="bg-slate-200  text-center text-black w-full "
               style={{
                 backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
@@ -119,15 +124,15 @@ const AddExam = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
               boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
             }}
           >
-            <label>Number of Questions : </label>
+            <label>No.</label>
             <input
-              className="bg-slate-200  text-center text-black w-full"
+              className="bg-slate-200  text-center text-black w-full "
               style={{
                 backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
@@ -143,7 +148,7 @@ const AddExam = () => {
         </div>
       </div>
       <div
-        className="w-full p-7 mt-5 "
+        className="w-full  mt-5 "
       >
         {Array.from({ length: numberOfQuestions }).map((_, index) => (
           <ProctorQuestionItem index={index} key={index} dataPass={dataPass} />
