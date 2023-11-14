@@ -31,21 +31,30 @@ const StudentExamPage = () => {
 
   return (
     <>
-      <div className="body w-full h-full p-2 flex flex-col gap-2 bg-black">
-        <div className="upperPart h-20 w-full bg-white">
-          {/* <Timer/>   */}
+      <div className="body w-full h-full  flex flex-col gap-2 bg-studentExamPageBGColor">
+        <div className="upperPart  w-full ">
           {isReady && (
-            <>
-              Exam Name - {examDetails.examName} Exam Date -{" "}
-              {examDetails.examDate}{" "}
+            <div  
+                className=" p-5 rounded-md flex justify-around align-middle items-center text-2xl font-bold font-seif text-black"
+                style={{
+                  // backgroundColor: "#4158D0" , backgroundImage:" linear-gradient(90deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%)",  
+                  backgroundColor: "white",               
+                  // boxShadow : "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
+                }}  
+            >
+              <p>Exam Name - {examDetails.examName} </p>
+              {/* <p>Exam Date - {examDetails.examDate}</p> */}
               {<CountdownTimer examDuration={examDetails.examDuration * 60} />}{" "}
-            </>
+            </div>
           )}
         </div>
-        <div className="lowerPart w-full flex  h-full gap-1 bg-green-600">
+        <div className="lowerPart w-full flex  h-full gap-2 ">
           <div
-            className="MCQ_Section h-full bg-yellow-400"
-            style={{ width: "70%" }}
+            className="MCQ_Section w-full h-full p-8 rounded-md "
+            style={{ width: "70%",
+            // backgroundColor: "#D8DFF6",
+            // boxShadow : "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset"
+          }}
           >
             {isReady && <StudentQuestionItem questionSets={questionSets} />}
           </div>

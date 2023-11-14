@@ -5,3 +5,8 @@
 html{
     height: 100vh;
 }
+
+
+.option{
+    @apply text-2xl p-2 rounded-lg;
+}
