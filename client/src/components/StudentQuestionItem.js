@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom';
 
-const StudentQuestionItem = ({ questionSets }) => {
+const StudentQuestionItem = ({questionSets }) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const navigate = useNavigate();
+  
 
   const submitHandler = () => {
-    if (currentQuestion === questionSets.length - 1) {
+    if (currentQuestion === questionSets?.length - 1) {
       alert("Exam Finished");
       setCurrentQuestion(0);
+      navigate("/result");
       return;
     }
 

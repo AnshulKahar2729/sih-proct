@@ -31,13 +31,33 @@ const StudentExamPage = () => {
 
   return (
     <>
-      {isReady && (
-        <>
-          Exam Name - {examDetails.examName} Exam Date - {examDetails.examDate}{" "}
-          {<CountdownTimer examDuration={examDetails.examDuration * 60} />}{" "}
-        </>
-      )}
-      {isReady && <StudentQuestionItem questionSets={questionSets} />}
+      <div className="body w-full h-full p-2 flex flex-col gap-2 bg-black">
+        <div className="upperPart h-20 w-full bg-white">
+          {/* <Timer/>   */}
+          {isReady && (
+            <>
+              Exam Name - {examDetails.examName} Exam Date -{" "}
+              {examDetails.examDate}{" "}
+              {<CountdownTimer examDuration={examDetails.examDuration * 60} />}{" "}
+            </>
+          )}
+        </div>
+        <div className="lowerPart w-full flex  h-full gap-1 bg-green-600">
+          <div
+            className="MCQ_Section h-full bg-yellow-400"
+            style={{ width: "70%" }}
+          >
+            {isReady && <StudentQuestionItem questionSets={questionSets} />}
+          </div>
+          <div
+            className="WEBRTC_Section h-full p-1 w-auto flex flex-col gap-1 bg-orange-400"
+            style={{ width: "30%" }}
+          >
+            <div className="Proctor h-1/2 w-full bg-red-600"></div>
+            <div className="Student h-1/2 w-full bg-purple-700"></div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
