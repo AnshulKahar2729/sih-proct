@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProctorQuestionItem from "../components/ProctorQuestionItem";
 
-const AddExam = () => {
+const AddExamPage = () => {
   const [questionSet, setQuestionSet] = useState([
     {
       question: "",
@@ -169,4 +169,4 @@ const AddExam = () => {
   );
 };
 
-export default AddExam;
+export default AddExamPage;
