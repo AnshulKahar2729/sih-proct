@@ -47,60 +47,54 @@ const AddExamPage = () => {
 
 
   return (
-    <div className="w-full" style={{ padding: "2% 12.5%" }}>
-      <h1 className="text-4xl font-serif mb-7">Proctor Dashboard</h1>
+    <div className="w-full" style={{ padding: "2% 12.5%",backgroundColor:"#D9DADB" }}>
 
       <div
-        className="flex p-5 justify-between bg-blue-400 text-lg  text-white"
+        className="flex flex-col p-7 rounded-full text-lg   w-full " 
         style={{
-          borderRadius: " 10px",
-          boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
-          backdropFilter: "blur(19.6px)",
-          webkitBackdropFilter: " blur(19.6px)",
-          border: " 8px ridge ",
+          borderRadius: " 1rem",
+          backgroundColor: "white",
+          padding: "1.5rem",
         }}
       >
-        <div className=" flex-wrap w-fit">
+        <h1 className="text-4xl  font-serif mb-7 text-black">Add an Exam for Student</h1>
+        <div className="grid grid-cols-4 gap-5 items-center">
           <div
-            className="flex gap-2 p-3 rounded-xl mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              borderRadius: " 1rem",
-              background: " rgb(255, 255, 255, 0.3)",
+              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
+              background: "#014da6",
             }}
           >
             <label>Name:</label>
             <input
-              className="bg-slate-200  text-center text-black w-full"
+              className="bg-slate-200 text-sm text-left px-2 text-black w-full placeholder:text-gray-700"
               style={{
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
-                background: " rgb(255, 255, 255, 0.3)",
+                background: "white",
               }}
               type="text"
               name="examName"
               value={examName}
-              placeholder="Exam Name"
+              placeholder="Enter your exam name... "
             />
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-xl mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              borderRadius: " 1rem",
-              background: " rgb(255, 255, 255, 0.3)",
+              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
+              background: "#014da6",
             }}
           >
             <label>Date:</label>
             <input
-              className="bg-slate-200 text-center text-black w-full"
+              className="bg-slate-200  text-center text-black w-full"
               style={{
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
-                background: " rgb(255, 255, 255, 0.3)",
+                background: "white",
               }}
               type="date"
               name="date"
@@ -109,21 +103,19 @@ const AddExamPage = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-xl mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              borderRadius: " 1rem",
-              background: " rgb(255, 255, 255, 0.3)",
+              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
+              background: "#014da6",
             }}
           >
             <label>Duration:</label>
             <input
-              className="bg-slate-200 text-center text-black w-full"
+              className="bg-slate-200  text-center text-black w-full "
               style={{
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
-                background: " rgb(255, 255, 255, 0.3)",
+                background: "white",
               }}
               type="time"
               name="duration"
@@ -132,21 +124,19 @@ const AddExamPage = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-xl mb-5"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white"
             style={{
-              backdropFilter: "blur(10px)",
-              WebkitBackdropFilter: "blur(10px)",
-              borderRadius: " 1rem",
-              background: " rgb(255, 255, 255, 0.3)",
+              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
+              background: "#014da6",
             }}
           >
-            <label>Number of Questions : </label>
+            <label>No.</label>
             <input
-              className="bg-slate-200 text-center text-black w-full"
+              className="bg-slate-200  text-center text-black w-full "
               style={{
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
-                background: " rgb(255, 255, 255, 0.3)",
+                background: "white",
               }}
               type="number"
               value={numberOfQuestions}
@@ -156,24 +146,18 @@ const AddExamPage = () => {
             />
           </div>
         </div>
-        <div>
-          <img src="https://o.remove.bg/downloads/27b3d60f-cf29-4a9d-a56f-b19823f687cd/image-removebg-preview.png" alt="image"/>
-        </div>
       </div>
       <div
-        className="w-full p-7 bg-blue-400 mt-5 "
-        style={{ border: "10px ridge black", borderRadius: "10px" }}
+        className="w-full  mt-5 "
       >
         {Array.from({ length: numberOfQuestions }).map((_, index) => (
           <ProctorQuestionItem index={index} key={index} dataPass={dataPass} />
         ))}
-      <div className="w-full text-center">
+      <div className="w-full text-center text-white text-2xl">
         <button type="submit" 
           style={{
-            backdropFilter: "blur(10px)",
-            WebkitBackdropFilter: "blur(10px)",
-            background: " rgb(255, 255, 255, 0.3)",
-            padding:"2px",
+            background: "#014da6",
+            padding:"4px",
             width:"150px",
             borderRadius: " 0.4rem",
           }}

@@ -10,3 +10,8 @@ html{
 .option{
     @apply text-2xl p-2 rounded-lg;
 }
+
+
+.optionHolder{
+    background-color: #014da6;
+}
