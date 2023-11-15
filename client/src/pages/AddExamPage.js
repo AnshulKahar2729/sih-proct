@@ -43,26 +43,28 @@ const AddExamPage = () => {
   const saveBtn = (e) => {
     e.preventDefault();
     console.log(questionSet);
-  }
-
+  };
 
   return (
-    <div className="w-full" style={{ padding: "2% 12.5%",backgroundColor:"#D9DADB" }}>
-
+    <div
+      className="w-full"
+      style={{ padding: "2% 12.5%", backgroundColor: "#1C2128" }}
+    >
       <div
-        className="flex flex-col p-7 rounded-full text-lg   w-full " 
+        className="flex flex-col p-7 rounded-full text-lg   w-full "
         style={{
           borderRadius: " 1rem",
           backgroundColor: "white",
           padding: "1.5rem",
         }}
       >
-        <h1 className="text-4xl  font-serif mb-7 text-black">Add an Exam for Student</h1>
+        <h1 className="text-4xl  font-serif mb-7 text-black">
+          Add an Exam for Student
+        </h1>
         <div className="grid grid-cols-4 gap-5 items-center">
           <div
-            className="flex gap-2 p-3 rounded-md mb-5 text-white"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white shadow-md shadow-black/50"
             style={{
-              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
             }}
           >
@@ -82,9 +84,8 @@ const AddExamPage = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5 text-white"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white shadow-md shadow-black/50"
             style={{
-              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
             }}
           >
@@ -103,9 +104,8 @@ const AddExamPage = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5 text-white"
+            className="flex gap-2 p-3 rounded-md mb-5 text-white shadow-md shadow-black/50"
             style={{
-              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
             }}
           >
@@ -124,15 +124,15 @@ const AddExamPage = () => {
           </div>
 
           <div
-            className="flex gap-2 p-3 rounded-md mb-5 text-white"
+            className="grid px-3 rounded-md mb-5 text-white shadow-md shadow-black/50 py-3"
             style={{
-              boxShadow: " 0px 3px 10px rgba(2, 1,, 0.1)",
               background: "#014da6",
+              gridTemplateColumns : "0.7fr 0.3fr"
             }}
           >
-            <label>No.</label>
+            <label>No. of Questions</label>
             <input
-              className="bg-slate-200  text-center text-black w-full "
+              className="bg-slate-200  text-center text-black w-full"
               style={{
                 backdropFilter: "blur(5px)",
                 WebkitBackdropFilter: "blur(10px)",
@@ -147,23 +147,24 @@ const AddExamPage = () => {
           </div>
         </div>
       </div>
-      <div
-        className="w-full  mt-5 "
-      >
+      <div className="w-full  mt-5 ">
         {Array.from({ length: numberOfQuestions }).map((_, index) => (
           <ProctorQuestionItem index={index} key={index} dataPass={dataPass} />
         ))}
-      <div className="w-full text-center text-white text-2xl">
-        <button type="submit" 
-          style={{
-            background: "#014da6",
-            padding:"4px",
-            width:"150px",
-            borderRadius: " 0.4rem",
-          }}
-          onClick={(e) => saveBtn(e)}
-          >Save</button>
-      </div>
+        <div className="w-full text-center text-white text-2xl">
+          <button
+            type="submit"
+            style={{
+              background: "#014da6",
+              padding: "4px",
+              width: "150px",
+              borderRadius: " 0.4rem",
+            }}
+            onClick={(e) => saveBtn(e)}
+          >
+            Save
+          </button>
+        </div>
       </div>
     </div>
   );

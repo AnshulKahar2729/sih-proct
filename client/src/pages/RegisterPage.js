@@ -1,6 +1,5 @@
 import axios from "axios";
-import { set } from "mongoose";
-import React from "react";
+import React,{useState} from "react";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");

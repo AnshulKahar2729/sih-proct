@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/indexpagecomponents/Header";
+import StudentIndexPage from "./StudentIndexPage";
+import ProctorIndexPage from "./ProctorIndexPage";
 
 const IndexPage = () => {
   const [role, setRole] = useState("");

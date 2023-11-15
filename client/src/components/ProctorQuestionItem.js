@@ -133,10 +133,10 @@ const ProctorQuestionItem = ({ dataPass, index }) => {
             handleInputChange(event, "correctAnswer");
           }}
         >
-          <option value="optionA">Option A</option>
-          <option value="optionB">Option B</option>
-          <option value="optionC">Option C</option>
-          <option value="optionD">Option D</option>
+          <option value="optiona">Option A</option>
+          <option value="optionb">Option B</option>
+          <option value="optionc">Option C</option>
+          <option value="optiond">Option D</option>
         </select>
       </div>
     </form>
