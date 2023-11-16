@@ -3,7 +3,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: { colors: { primary: "#014ea51a", primaryBorder: "#014DA5" ,studentExamPageBGColor:"#F0F3FF", } },
+    extend: { colors: { primary: "#014ea51a", primaryBorder: "#014DA5" ,studentExamPageBGColor:"#F0F3FF", benefitCardBgColor:"#1C2128" } },
   },
   plugins: [],
 };
