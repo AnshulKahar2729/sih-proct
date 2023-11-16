@@ -11,7 +11,7 @@ const IndexPage = () => {
 
   return (
     <>
-      <div className=" max-w-6xl h-auto mx-auto p-4 ">
+      <div className=" max-w-7xl h-auto mx-auto p-4 ">
         {role === "student" ? <StudentIndexPage /> : null}
         {role === "proctor" ? <ProctorIndexPage /> : null}
         <Header />
