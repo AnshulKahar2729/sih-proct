@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="w-full mt-8 flex relative" style={{backgroundColor:"#000070"}}>
+    <div className="w-full mt-8 flex relative bg-blue-800" >
       <div
         className="top-0 w-full h-56 flex justify-between text-white"
         style={{ paddingInline: "12.5%", paddingBlock: "2%" }}
@@ -41,10 +41,10 @@ function Footer() {
         </div>
       </div>
       <div
-        className=" w-full h-min absolute bottom-0 flex justify-between items-center"
-        style={{ paddingInline: "12.5%", paddingBlock: "0.5%" , backgroundColor:"#000040" }}
+        className=" w-full h-min absolute bottom-0 flex justify-between items-center bg-benefitCardBgColor"
+        style={{ paddingInline: "12.5%", paddingBlock: "0.5%" , }}
       >
-        <div></div>
+        <div className="text-white">&copy; 2023 PROCTORPRO. All rights reserved</div>
         <div className="flex gap-5">
             <img src="https://www.freeiconspng.com/uploads/hd-youtube-logo-png-transparent-background-20.png" alt="youtube-icon" className="h-8 " />
             <img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_twitter-512.png" alt="twitter-icon" className="h-8 "/>
