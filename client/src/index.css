@@ -15,3 +15,11 @@ html{
 .optionHolder{
     background-color: #014da6;
 }
+
+input[type="email"], input[type="password"], input[type="text"]{
+    @apply placeholder:text-sm text-sm shadow-xl shadow-black/10 rounded-md py-3;
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus{
+    @apply outline-none;
+}

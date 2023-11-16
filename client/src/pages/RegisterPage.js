@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContextProvider";
+import { NavLink } from "react-router-dom";
 
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
@@ -41,34 +42,73 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="username"
-          value={username}
-          onChange={(event) => setUsername(event.target.value)}
-        />
-        <input
-          type="email"
-          value={email}
-          placeholder="email"
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <input
-          type="password"
-          value={password}
-          placeholder="password"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <input
-          type="text"
-          value={role}
-          placeholder="role"
-          onChange={(event) => setRole(event.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="h-screen w-full bg-white flex items-center justify-center relative z-20 overflow-hidden">
+      <div
+        className="bg-blue-100 absolute -z-10"
+        style={{
+          width: "400px",
+          height: "400px",
+          borderRadius: "200px",
+          top: "-180px",
+          right: "-180px",
+        }}
+      ></div>
+      <div
+        className=" bg-white absolute -z-10"
+        style={{
+          width: "400px",
+          height: "400px",
+          border: "70px solid blue",
+          borderRadius: "200px",
+          bottom: "-50px",
+          left: "-50px",
+        }}
+      ></div>
+      <div
+        className=" bg-white h-auto grid shadow-lg shadow-blue-500/50"
+        style={{ width: "85%", gridTemplateColumns : "0.45fr 0.55fr" }}
+      >
+        <div className=" bg-blue-600"></div>
+        <div className=" bg-white h-full">
+          <div className=" h-full w-full bg-white overflow-hidden">
+            <div className=" upper-part flex flex-row items-center gap-5 mt-6 pr-10 w-full text-center justify-end">
+              <span className=" text-sm text-gray-500">
+                Don't have an account?
+              </span>
+              <NavLink
+                className={
+                  " text-sm bg-blue-600 text-white px-4 rounded-sm py-2"
+                }
+                to={"/login"}
+              >
+                Login
+              </NavLink>
+            </div>
+
+            <div className=" title mb-4" style={{ marginLeft: "80px" }}>
+              <h1 className=" text-4xl font-bold mt-3 text-gray-700">
+                Create your account
+              </h1>
+            </div>
+
+            <div className=" form text-gray-700" style={{marginLeft : "80px"}}>
+              <form onSubmit={handleSubmit}>
+                <label htmlFor="name" className=" block mb-2 mt-5">Full name</label>
+                <input style={{paddingInlineStart : "15px", paddingInlineEnd : "20px" ,width : "330px"}} type="text" id="name" placeholder="Your name"/>
+                <label htmlFor="email" className=" block mb-2 mt-5">Email address</label>
+                <input style={{paddingInlineStart : "15px", paddingInlineEnd : "20px" ,width : "330px"}} type="text" id="email" placeholder="Example@email.com"/>
+                <label htmlFor="password" className=" block mb-2 mt-5">Password</label>
+                <input style={{paddingInlineStart : "15px", paddingInlineEnd : "20px" ,width : "330px"}} type="text" id="password" placeholder=" Enter password"/>
+                <button type="submit" className="bg-blue-600 font-semibold py-3 rounded mt-7 text-sm text-white" style={{paddingInline : "100px"}}>Create your account</button>
+              </form>
+            </div>
+
+            <div className="bottom text-sm mt-4 text-gray-700 mb-4" style={{marginLeft : "80px"}}>
+                Already have an account? <NavLink to={"/login"} className="text-blue-600">Login</NavLink>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
