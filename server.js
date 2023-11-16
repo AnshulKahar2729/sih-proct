@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 const SECRET = process.env.SECRET;
 
 app.use(express.json());
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({ credentials: true, origin: "*" }));
 
 mongoose
   .connect(
@@ -119,6 +119,18 @@ app.post("/api/addExam", authenticateJWT, async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(400).json({ message: err.message });
+  }
+});
+
+app.get("/api/profile", async (req, res) => {
+  const { authorization } = req.headers;
+  if (authorization) {
+    const token = authorization.split(" ")[1];
+    const { userId } = jwt.verify(token, SECRET);
+    const user = await User.findById(userId);
+    res.status(200).json({ user });
+  } else{
+    res.status(401).json({ message: "Unauthorized" });
   }
 });
 

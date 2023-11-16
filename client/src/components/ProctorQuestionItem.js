@@ -39,7 +39,7 @@ const ProctorQuestionItem = ({ dataPass, index }) => {
             Question
           </div>
           <input
-            style={{ border: "1px solid gray" }}
+            style={{ border: "1px solid gray", display : "block" }}
             className="w-2/3 px-2 rounded-r-md"
             placeholder="Enter your Question"
             onChange={(event) => {
