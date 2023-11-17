@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProctorQuestionItem from "../components/ProctorQuestionItem";
+import ProctorQuestionItem from "../../components/ProctorQuestionItem";
 
 const AddExamPage = () => {
   const [questionSet, setQuestionSet] = useState([

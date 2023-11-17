@@ -6,6 +6,7 @@ export const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    
     const getUser = async () => {
       // get token from local storage
       const token = localStorage.getItem("token");
@@ -20,15 +21,17 @@ export const UserContextProvider = ({ children }) => {
           },
         });
         const data = await response.json();
-        const { email, _id: id, role, username } = data.user;
-        setUser({ email, id, role, username });
-        console.log({ email, id, role, username });
+        const { email, _id: id, role, name } = data.user;
+        setUser({ email, id, role, name });
+        console.log({ email, id, role, name });
       } catch (error) {
         console.log(error);
       }
     };
 
-    getUser();
+    if(localStorage.getItem("token")){
+      getUser();
+    }
   }, []);
-  return <UserContext.Provider value={{}}>{children}</UserContext.Provider>;
+  return <UserContext.Provider value={{user}}>{children}</UserContext.Provider>;
 };

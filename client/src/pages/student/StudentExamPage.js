@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import StudentQuestionItem from "../components/StudentQuestionItem";
-import CountdownTimer from "../components/CountDown";
+import StudentQuestionItem from "../../components/StudentQuestionItem";
+import CountdownTimer from "../../components/CountDown";
 
 const StudentExamPage = () => {
   const [questionSets, setQuestionSets] = useState();

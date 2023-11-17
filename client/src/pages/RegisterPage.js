@@ -2,38 +2,36 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContextProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import RegisterImg from "../assets/registerImg.jpg";
 
 const RegisterPage = () => {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
-  const [user, setUser] = useState(null);
-  const { user: ctxUser } = useContext(UserContext);
+  const [role, setRole] = useState("proctor");
+  const { user: ctxUser, setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, email, password, role);
+    console.log("hey");
+    console.log(name, email, password, role);
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/api/register",
-        {
-          username,
-          email,
-          password,
-          role,
-        },
-        {
-          "Access-Control-Allow-Origin": "*",
-        }
-      );
+      const { data } = await axios.post("http://localhost:4000/api/register", {
+        name,
+        email,
+        password,
+        role,
+      });
 
       if (data) {
+        navigate("/");
         // set the auth token in local storage
         localStorage.setItem("token", data.token);
+        setUser(data.user);
+        alert("User created successfully");
       }
 
       console.log(data);
@@ -114,6 +112,10 @@ const RegisterPage = () => {
                   Full name
                 </label>
                 <input
+                  value={name}
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
                   style={{
                     paddingInlineStart: "15px",
                     paddingInlineEnd: "20px",
@@ -127,6 +129,10 @@ const RegisterPage = () => {
                   Email address
                 </label>
                 <input
+                  value={email}
+                  onChange={(event) => {
+                    setEmail(event.target.value);
+                  }}
                   style={{
                     paddingInlineStart: "15px",
                     paddingInlineEnd: "20px",
@@ -140,6 +146,10 @@ const RegisterPage = () => {
                   Password
                 </label>
                 <input
+                  value={password}
+                  onChange={(event) => {
+                    setPassword(event.target.value);
+                  }}
                   style={{
                     paddingInlineStart: "15px",
                     paddingInlineEnd: "20px",

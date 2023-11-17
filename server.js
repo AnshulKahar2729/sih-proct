@@ -43,13 +43,18 @@ const authenticateJWT = (req, res, next) => {
 };
 
 app.post("/api/register", async (req, res) => {
-  const { username, email, password, role } = req.body;
+  const { name, email, password, role } = req.body;
   try {
     // check if user already exists
-    const alreadyExist = await User.findOne({ $or: [{ email }, { username }] });
-    if (!alreadyExist) {
+    const alreadyExist = await User.findOne({ $and: [ { email }, { role } ] });
+
+    console.log(!alreadyExist);
+    if (alreadyExist) {
+      console.log(alreadyExist);
+      res.status(400).json({ message: "User already exists" });
+    } else {
       const user = await User.create({
-        username,
+        name,
         email,
         password,
         role,
@@ -59,8 +64,6 @@ app.post("/api/register", async (req, res) => {
       console.log(token);
 
       res.status(201).json({ userId: user._id, token });
-    } else {
-      res.status(400).json({ message: "User already exists" });
     }
   } catch (err) {
     console.log(err);
@@ -129,7 +132,7 @@ app.get("/api/profile", async (req, res) => {
     const { userId } = jwt.verify(token, SECRET);
     const user = await User.findById(userId);
     res.status(200).json({ user });
-  } else{
+  } else {
     res.status(401).json({ message: "Unauthorized" });
   }
 });
