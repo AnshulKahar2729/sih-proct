@@ -6,6 +6,8 @@ import Hero from "../components/indexpagecomponents/Hero";
 import { UserContext } from "../context/UserContextProvider";
 import StudentIndexPage from "./student/StudentIndexPage";
 import ProctorIndexPage from "./proctor/ProctorIndexPage";
+import SystemFeatures from "../components/indexpagecomponents/SystemFeatures";
+
 
 const IndexPage = () => {
   const [isToken, setIsToken] = useState(false); // to check if token is present in local storage
@@ -29,6 +31,7 @@ const IndexPage = () => {
             <Header />
             <Hero />
             <Benefits />
+            <SystemFeatures/>
           </>
         )}
       </div>
