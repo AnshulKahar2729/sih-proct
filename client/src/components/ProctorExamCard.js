@@ -71,7 +71,7 @@ const ProctorExamCard = ({exam}) => {
 
       <div className="mt-2">
         <Link className="flex gap-2 mt-2 items-center justify-center text-center bg-white border text-blue-700 rounded-xl px-5 py-2" to={`/exam/${exam._id}`}>
-          Start
+          Start Now
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

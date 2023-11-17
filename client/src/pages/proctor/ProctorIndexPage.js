@@ -31,7 +31,7 @@ const ProctorIndexPage = () => {
           <h1 className=" text-4xl font-bold text-blue-900 mb-3">Your Exams</h1>
           <p className=" text-gray-700">
             Here you can find all the available which will be proctored. Just
-            click on the "Star Now" button to monitor.
+            click on the "Start Now" button to monitor.
           </p>
         </div>
 
