@@ -7,6 +7,9 @@ import { UserContext } from "../context/UserContextProvider";
 import StudentIndexPage from "./student/StudentIndexPage";
 import ProctorIndexPage from "./proctor/ProctorIndexPage";
 import SystemFeatures from "../components/indexpagecomponents/SystemFeatures";
+import AboutUs from "../components/indexpagecomponents/AboutUs";
+import KeyFeatures from "../components/indexpagecomponents/KeyFeatures";
+import ContactUs from "../components/indexpagecomponents/ContactUs";
 
 
 const IndexPage = () => {
@@ -30,8 +33,11 @@ const IndexPage = () => {
           <>
             <Header />
             <Hero />
+            <AboutUs/>
+            <KeyFeatures/>
             <Benefits />
             <SystemFeatures/>
+            <ContactUs/>
           </>
         )}
       </div>
