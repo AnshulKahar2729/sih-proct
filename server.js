@@ -46,7 +46,7 @@ app.post("/api/register", async (req, res) => {
   const { name, email, password, role } = req.body;
   try {
     // check if user already exists
-    const alreadyExist = await User.findOne({ $and: [ { email }, { role } ] });
+    const alreadyExist = await User.findOne({ $and: [{ email }, { role }] });
 
     console.log(!alreadyExist);
     if (alreadyExist) {
@@ -74,12 +74,15 @@ app.post("/api/register", async (req, res) => {
 app.get("/api/login", async (req, res) => {
   const { email, password, role } = req.body;
   try {
-    const userDoc = await User.findOne({ email, password, role });
+    const userDoc = await User.findOne({ email, role });
     if (userDoc) {
-      const token = jwt.sign({ userId: userDoc._id, email, role }, SECRET);
-      res.status(200).json({ userId: userDoc._id, token });
-    } else {
-      res.status(400).json({ message: "Invalid credentials" });
+      const passOk = password === userDoc.password;
+      if (passOk) {
+        const token = jwt.sign({ userId: userDoc._id, email, role }, SECRET);
+        res.status(200).json({ userId: userDoc._id, token });
+      } else {
+        res.status(400).json({ message: "Invalid credentials" });
+      }
     }
   } catch (err) {
     console.log(err);

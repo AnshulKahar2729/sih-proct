@@ -6,37 +6,29 @@ import { NavLink } from "react-router-dom";
 import RegisterImg from "../assets/registerImg.jpg";
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-  const [user, setUser] = useState(null);
   const { user: ctxUser } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(username, email, password, role);
+    console.log(email, password, role);
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:4000/api/login",
-        {
-          username,
-          email,
-          password,
-          role,
-        },
-        {
-          "Access-Control-Allow-Origin": "*",
-        }
-      );
+      const { data } = await axios.post("http://localhost:4000/api/login", {
+        email,
+        password,
+        role,
+      });
 
       if (data) {
         // set the auth token in local storage
         localStorage.setItem("token", data.token);
+        console.log(data);
       }
 
-      console.log(data);
+      
     } catch (error) {
       console.log(error);
     }
@@ -108,12 +100,17 @@ const LoginPage = () => {
               </h1>
             </div>
 
-            <div className="mt-14 form text-gray-700" style={{ marginLeft: "80px" }}>
+            <div
+              className="mt-14 form text-gray-700"
+              style={{ marginLeft: "80px" }}
+            >
               <form onSubmit={handleSubmit}>
                 <label htmlFor="email" className=" block mb-2 mt-5">
                   Email address
                 </label>
                 <input
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                   style={{
                     paddingInlineStart: "15px",
                     paddingInlineEnd: "20px",
@@ -136,6 +133,8 @@ const LoginPage = () => {
                   id="password"
                   placeholder=" Enter password"
                   className=" block"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
 
                 <div className=" mt-5">

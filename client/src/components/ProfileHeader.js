@@ -5,9 +5,12 @@ import Avatar from "../assets/avatar.jpg";
 import { NavLink } from "react-router-dom";
 
 const ProfileHeader = () => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
-  
+  const handleLogout = async() => {
+    localStorage.removeItem("token");
+    setUser(null);
+  }
 
   return (
     <>
@@ -23,10 +26,6 @@ const ProfileHeader = () => {
             </Link>
           </nav>
 
-          <nav>
-            
-          </nav>
-
           <nav className=" text-gray-700 flex gap-4 items-center pr-2 pt-2">
             <div>
               Hi,{" "}
@@ -40,7 +39,14 @@ const ProfileHeader = () => {
               <img src={Avatar} alt="" style={{ borderRadius: "25px" }} />
             </NavLink>
 
-            <Link className=" text-gray-600 hover:text-blue-600" to={"/addExam"}>Add Exam</Link>
+            <Link
+              className=" text-gray-600 hover:text-blue-600 border-gray-400 border-l-2 pl-3 "
+              to={"/addExam"}
+            >
+              Add Exam
+            </Link>
+
+            <NavLink className={" bg-blue-800 text-white rounded-3xl py-2 px-4 "} onClick={handleLogout}>Logout</NavLink>
           </nav>
         </header>
       </div>

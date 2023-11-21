@@ -26,7 +26,7 @@ const IndexPage = () => {
         {isToken && user?.role === "proctor" ? <ProctorIndexPage /> : null}
       </div>
       <div className=" max-w-7xl h-auto mx-auto p-4 ">
-        {!isToken && (
+        {!user && (
           <>
             <Header />
             <Hero />
@@ -35,7 +35,7 @@ const IndexPage = () => {
           </>
         )}
       </div>
-      {!isToken && (
+      {!user && (
         <div className="mx-auto">
           <Footer />
         </div>

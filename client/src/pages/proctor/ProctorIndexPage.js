@@ -36,8 +36,8 @@ const ProctorIndexPage = () => {
         </div>
 
         <div className=" examList flex flex-row gap-3">
-          {exams.map((exam) => {
-            return <ProctorExamCard exam={exam} />;
+          {exams.map((exam, index) => {
+            return <ProctorExamCard key={index} exam={exam} />;
           })}
         </div>
       </div>
