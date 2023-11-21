@@ -3,7 +3,7 @@ import SystemImg from '../../assets/SystemFeaturesImg.png'
 
 function SystemFeatures() {
   return (
-    <div className='bg-benefitCardBgColor text-white rounded-2xl overflow-hidden p-5 hover:bg-white hover:text-black hover:shadow-md transition-all hover:shadow-black'>
+    <div className='bg-blue-800 text-white rounded-2xl overflow-hidden p-5 hover:bg-white hover:text-black hover:shadow-md transition-all hover:shadow-black'>
 
 
         <div className='flex flex-col text-center gap-3 mb-3 '>

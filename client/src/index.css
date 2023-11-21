@@ -13,7 +13,7 @@ html{
 
 
 .optionHolder{
-    background-color: #014da6;
+    background-color: #205591;
 }
 
 input[type="email"], input[type="password"], input[type="text"]{
@@ -23,3 +23,8 @@ input[type="email"], input[type="password"], input[type="text"]{
 input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, select{
     @apply outline-none;
 }
+
+.contactUsInput{
+    @apply text-sm rounded-md py-3 px-4 font-serif border border-gray-500;
+}
+
