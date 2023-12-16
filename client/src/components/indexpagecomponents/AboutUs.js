@@ -3,7 +3,7 @@ import AboutUsImg from '../../assets/AboutUsImg.png';
 
 function AboutUs() {
   return (
-    <div className=' w-full my-8 flex rounded-2xl overflow-hidden gap-1 text-right'>
+    <div className=' w-full my-8 flex rounded-2xl overflow-hidden text-right'>
         <div className='w-1/2 bg-blue-800 flex justify-center rounded-l-2xl'>.
             <img className=' ' src={AboutUsImg} alt='AboutUsImg' />    
         </div>

@@ -3,7 +3,7 @@ import KeyFeaturesImg from '../../assets/KeyFeaturesImg.png';
 
 function KeyFeatures() {
   return (
-    <div className=' w-full my-8 flex rounded-2xl overflow-hidden gap-1'>
+    <div className=' w-full my-8 flex rounded-2xl overflow-hidden'>
         <div className='w-1/2 bg-white text-blue-800 hover:bg-blue-800 hover:text-white m-x flex flex-col gap-4 p-10 justify-center '>
             <h3 className='text-5xl font-medium font-serif'>Key Features</h3>
             <p className='flex flex-col gap-3'>

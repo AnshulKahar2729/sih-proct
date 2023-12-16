@@ -96,7 +96,7 @@ const LoginPage = () => {
 
             <div className="mt-6 title mb-4" style={{ marginLeft: "80px" }}>
               <h1 className=" text-4xl font-bold mt-3 text-gray-700">
-                Create your account
+                Login
               </h1>
             </div>
 
@@ -156,9 +156,9 @@ const LoginPage = () => {
                 <button
                   type="submit"
                   className="block bg-blue-600 font-semibold py-3 rounded mt-5 text-sm text-white"
-                  style={{ paddingInline: "100px" }}
+                  style={{ paddingInline: "147px" }}
                 >
-                  Create your account
+                  Login
                 </button>
               </form>
             </div>
