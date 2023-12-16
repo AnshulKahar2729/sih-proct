@@ -10,14 +10,9 @@ function ContactUs() {
         <div className='z-10 absolute text-blue-900  font-semibold p-10 grid gap-8' style={{}} >
           <div className='w-full h-full' style={{}}></div>
           <h3 className='text-6xl font-serif font-semibold'>Get in Touch</h3>
-          <p className='text-2xl font-bold'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <p className='text-2xl font-semibold'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          <div className='grid gap-3'>
-              <p className='flex items-center gap-2 text-md'><FaMobileScreen />  <p>+91 981258258</p></p>
-              <p className='flex items-center gap-2 text-md'><MdEmail />   <p>devdynamos1@gmail.com</p></p>
-          </div>
+          
         </div>
-        <img className='z-0 w-full h-full' style={{backgroundSize: "contain",backgroundRepeat: "no-repeat",backgroundPosition:"center",filter: "blur(8px)" ,}} src={ContactUsImg} alt="signUpImg"></img>
+        <img className='z-0 w-full h-full' style={{backgroundSize: "contain",backgroundRepeat: "no-repeat",backgroundPosition:"center",}} src={ContactUsImg} alt="signUpImg"></img>
       </div>
 
 
