@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex flex-row items-center justify-between mb-8">
+    <header className="flex flex-row items-center justify-between pb-8 shadow-md ">
       <nav>
         <Link
           className=" font-semibold text-2xl"
