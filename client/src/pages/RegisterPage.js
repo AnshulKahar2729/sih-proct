@@ -27,11 +27,10 @@ const RegisterPage = () => {
       });
 
       if (data) {
-        navigate("/");
         // set the auth token in local storage
         localStorage.setItem("token", data.token);
         setUser(data.user);
-        alert("User created successfully");
+        navigate("/");
       }
 
       console.log(data);
@@ -172,8 +171,8 @@ const RegisterPage = () => {
                       setRole(event.target.value);
                     }}
                   >
-                    <option value="optiona">Proctor</option>
-                    <option value="optionb">Student</option>
+                    <option value="proctor">Proctor</option>
+                    <option value="student">Student</option>
                   </select>
                 </div>
 

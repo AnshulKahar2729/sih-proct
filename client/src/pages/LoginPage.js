@@ -68,7 +68,7 @@ const LoginPage = () => {
               <h1 className=" text-gray-100 text-4xl font-bold">
                 Welcome back to our website
               </h1>
-              <p className=" text-gray-100 text-lg mt-4 text-center mt-5">
+              <p className=" text-gray-100 text-lg text-center mt-5">
                 Login now to get access to all the cool and great features.
               </p>
             </div>
